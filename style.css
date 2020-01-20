@@ -1,0 +1,36 @@
+body{
+    width: 350px;
+    height: fit-content;
+    background: darkgrey;
+}
+.onoff{
+    width: 65px;
+    margin: auto;
+}
+select{
+    position: relative;
+    float: right;
+}
+input{
+    position: relative;
+    float: right;
+}
+h1{
+    font-size: inherit;
+    text-align: center;
+    margin: auto;
+}
+.texto{
+    width: 185px;
+    position: relative;
+    float: left;
+    align-content: center;
+}
+.um{
+    line-height: 18px;
+    height: 18px;
+}
+.dois{
+    line-height: 22px;
+    height: 22px;
+}
