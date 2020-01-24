@@ -7,10 +7,15 @@ chrome.runtime.onMessage.addListener(function(mess){
     }
 
     if(message.state == "on"){
+        console.log("on")
         timer = setInterval(redirect, (message.secs * 1000))
+        countDown = message.secs
+        timerCD = setInterval(regressiva, 1000)
     }
     if(message.state == "off"){
+        console.log("off")
         clearInterval(timer)
+        clearInterval(timerCD)
         favs = []
     }
 })
@@ -22,9 +27,17 @@ function redirect(){
     chrome.tabs.update(tab, {url: primeiro})
     favs.shift()
     favs.push(primeiro)
+    countDown = message.secs
+}
 
+
+function regressiva(){
+    console.log(countDown)
+    countDown--
 }
 
 var timer
+var timerCD
+var countDown = 0
 var message
 var favs = []
