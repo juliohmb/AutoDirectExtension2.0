@@ -18,23 +18,21 @@ chrome.runtime.onMessage.addListener(function(mess){
         clearInterval(timerCD)
         favs = []
     }
+    function redirect(){
+        var tab = message.tabId.id
+        var primeiro = favs[0]
+        chrome.tabs.update(tab, {url: primeiro})
+        favs.shift()
+        favs.push(primeiro)
+        countDown = message.secs
+    }
+    function regressiva(){
+        console.log(countDown)
+        chrome.runtime.sendMessage(countDown)
+        countDown--
+    }
 })
 
-
-function redirect(){
-    var tab = message.tabId.id
-    var primeiro = favs[0]
-    chrome.tabs.update(tab, {url: primeiro})
-    favs.shift()
-    favs.push(primeiro)
-    countDown = message.secs
-}
-
-
-function regressiva(){
-    console.log(countDown)
-    countDown--
-}
 
 var timer
 var timerCD

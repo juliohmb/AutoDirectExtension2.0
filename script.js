@@ -1,3 +1,7 @@
+chrome.runtime.onMessage.addListener(function(cD){
+    console.log(cD)
+    document.body.querySelector("p").innerHTML = cD
+})
 document.body.querySelector("button#onoff").addEventListener("click", function(){
     if(document.body.querySelector("button#onoff").innerHTML == "Ligar" && document.body.querySelector("input").value != ""){
         document.body.querySelector("button#onoff").innerHTML = "Desligar"

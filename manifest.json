@@ -6,7 +6,6 @@
         "default_popup" : "popup.html"
     },
     "background": {
-        "persistent": false,
         "scripts": ["back.js"]
     },
     "permissions": [
